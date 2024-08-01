@@ -23,6 +23,9 @@ self: super:
           nongnuPackages = esuper.nongnuPackages.override {
             generated = ../repos/nongnu/nongnu-generated.nix;
           };
+          nongnuPackages = esuper.fromElisp.override {
+            generated = ../repos/fromElisp/default.nix;
+          };
 
         in
           esuper.override {
